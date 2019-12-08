@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
     void connectServer(){
 
 
-        String postUrl= "https://saveimage.herokuapp.com/";
+        //String postUrl= "https://saveimage.herokuapp.com/";
+        String postUrl= "http://15.206.157.196:8080/";
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
