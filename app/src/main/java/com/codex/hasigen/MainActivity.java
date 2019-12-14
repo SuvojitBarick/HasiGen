@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 connectServer();
+                Log.i("Image Path",selectedImagePath);
+//                Toast.makeText(MainActivity.this, "Connect Server() Attempted", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //String postUrl= "https://saveimage.herokuapp.com/";
-        String postUrl= "http://13.234.110.170:8080/";
+        String postUrl= "http://13.233.140.218:8080/";
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -70,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
         // Read BitMap by file path
 
         bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
+
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        Log.i("BITMAP FILE", bitmap.toString());
         byte[] byteArray = stream.toByteArray();
 
         RequestBody postBodyImage = new MultipartBody.Builder()
