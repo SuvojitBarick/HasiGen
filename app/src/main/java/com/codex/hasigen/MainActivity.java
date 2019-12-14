@@ -33,7 +33,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    String selectedImagePath=null;
+    String selectedImagePath=" ";
     Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
     void connectServer(){
 
 
-        String postUrl= "https://saveimage.herokuapp.com/";
+        //String postUrl= "https://saveimage.herokuapp.com/";
+        String postUrl= "http://13.234.110.170:8080/";
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         // Read BitMap by file path
 
         bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
-       /* bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);*/
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
         RequestBody postBodyImage = new MultipartBody.Builder()
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void selectImage() {
+   public void selectImage() {
         Intent intent = new Intent();
         intent.setType("*/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
