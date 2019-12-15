@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +34,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    String selectedImagePath=null;
+    String selectedImagePath=" ";
     Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +53,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 connectServer();
+                Log.i("Image Path",selectedImagePath);
+//                Toast.makeText(MainActivity.this, "Connect Server() Attempted", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
-
     void connectServer(){
 
 
@@ -70,7 +70,9 @@ public class MainActivity extends AppCompatActivity {
         // Read BitMap by file path
 
         bitmap = BitmapFactory.decodeFile(selectedImagePath, options);
-       /* bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);*/
+
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        Log.i("BITMAP FILE", bitmap.toString());
         byte[] byteArray = stream.toByteArray();
 
         RequestBody postBodyImage = new MultipartBody.Builder()
@@ -128,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void selectImage() {
+   public void selectImage() {
         Intent intent = new Intent();
         intent.setType("*/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
