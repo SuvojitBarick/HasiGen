@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "218854650210",
+    "firebase_url": "https://hashigen-cbbff.firebaseio.com",
+    "project_id": "hashigen-cbbff",
+    "storage_bucket": "hashigen-cbbff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218854650210:android:7bc707bcaae370842bbc3b",
+        "android_client_info": {
+          "package_name": "com.example.hashigen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218854650210-i0n5p07feod00eqv4oec8bst0fdjs1j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcrYztgZX7NXbzRurC-HshNxluiLtH-B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218854650210-i0n5p07feod00eqv4oec8bst0fdjs1j8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
