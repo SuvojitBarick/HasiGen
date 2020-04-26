@@ -54,7 +54,9 @@ class MyAppHome extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // List hashtags = _str.toString().split(' ');
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -71,6 +73,7 @@ class MyAppHome extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Center(
+                  heightFactor: 2,
                   child: Text(
                     'Tap below icon to chose your image',
                   ),
@@ -98,25 +101,32 @@ class MyAppHome extends State<MyApp> {
                                     ),
                             ),
                             Divider(),
-                            SelectableText(
-                              '$_str',
-                              // maxLines: 10,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.blueAccent,
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(10),
+                              child: SelectableText(
+                                '$_str',
+                                // maxLines: 10,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.blueAccent,
+                                ),
+                                toolbarOptions: ToolbarOptions(
+                                    copy: true,
+                                    selectAll: true,
+                                    cut: false,
+                                    paste: false),
                               ),
-                              toolbarOptions: ToolbarOptions(
-                                  copy: true,
-                                  selectAll: true,
-                                  cut: false,
-                                  paste: false),
-                            )
+                            ),
                           ],
                         )
                       : imgfile == null
                           ? Center(
-                              child: Text('input an image to get you hashtags'))
+                              child: Text(
+                              'input an image to get your hashtags',
+                              style: TextStyle(fontSize: 18),
+                            ))
                           : CircularProgressIndicator(),
                 ),
               ],
