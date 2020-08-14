@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1017725241736",
+    "firebase_url": "https://hashtaggen-b5ae5.firebaseio.com",
+    "project_id": "hashtaggen-b5ae5",
+    "storage_bucket": "hashtaggen-b5ae5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017725241736:android:303a6ae099d79f0812523d",
+        "android_client_info": {
+          "package_name": "com.example.hashigen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017725241736-m8cltbf526m3te24d9joeg909gnsl8b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7ItCisrvq5CGpo5Y9DKyyU_mNjfbW6d4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017725241736-m8cltbf526m3te24d9joeg909gnsl8b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
